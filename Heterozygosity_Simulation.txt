@@ -1,0 +1,15 @@
+# R script for simulating heterozygosity in a hypothetical population by drawing from values in real populations
+# preplague3 are the real heterozygosity values in 3 populations
+# Ho = average observed heterozygosity across loci for each individual
+
+pdogavg <- rep(NA,10000) 	#empty vector for populating with simulated mean Ho of all individuals present in colonies where survivors were sampled
+surv <- mean(survivors, na.rm=TRUE) #survivors is a vector of Ho in 6 surviving prairie dogs
+count <- 0
+for (i in 1:10000) {
+	pdogavg[i] <- mean(sample(preplague3, 6, replace=FALSE))	#sample without replacement from preplague3, a vector of Ho in all 3 pre-plague colonies where survivors were sampled. There were 6 survivors, so we sample 6 individuals at a time
+     if (pdogavg[i] > surv)	
+     count <- count + 1	#count the number of times mean Ho pre-plague is greater than mean survivor Ho 
+	}
+p <- count/10000	#proportion of times Ho(pre) > Ho(survivor)
+p
+

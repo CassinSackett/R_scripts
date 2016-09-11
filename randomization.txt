@@ -1,0 +1,16 @@
+# R script for heterozygosity randomization procedures:
+# pre-plague vs. post-recolonization heterozygosity in each population separately
+# Ho = average observed heterozygosity across loci for each individual
+# 1A is the population name
+
+pre1 <- a1AHopre[!is.na(a1AHopre)]  #vector of Ho in 1A pre-plague population
+avg1A <- rep(NA,10000) #empty vector for populating with mean simulated Ho pre-plague values
+post1A <- mean(a1AHopost, na.rm=TRUE)	#mean Ho in 1A post-recolonization
+count <- 0
+for (i in 1:10000) {
+	avg1A[i] <- mean(sample(pre1, 31, replace=FALSE)) #sample w/out replacement from vector of 1A pre-plague Ho values. In 1A post-recolonization, N=31
+     if (avg1A[i] > post1A)	
+     count <- count + 1	#Count number of times mean Ho pre-plague is greater than mean Ho post-recolonization
+	}
+p <- count/10000		#proportion of times Ho(pre) > Ho(post)
+p
