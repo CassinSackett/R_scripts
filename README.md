@@ -1,5 +1,5 @@
 # R_scripts
-# These scripts were writtten to simulate a population of heterozygosity estimates for analysis of very small sample sizes.
+# These scripts were writtten to simulate a population of heterozygosity estimates for analysis of very small sample sizes. Other R scripts can be found within their related repositories.
 
 # These data and the rationale are found in: L.C. Sackett, S.K. Collinge, A.P. Martin 2013.  Do pathogens reduce genetic diversity of their hosts?  Variable effects of sylvatic plague in black-tailed prairie dogs. Molecular Ecology 22: 2441-2555. http://www.colorado.edu/eeb/sackett/LorenSackett/Publications_files/Sackett_recolonization_final.pdf 
 
